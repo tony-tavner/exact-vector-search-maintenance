@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "article_id": "A",
+  "stage_id": "E02",
+  "criteria_version": "A-E02-criteria-1.1",
+  "created_date": "2026-11-17",
+  "status": "prospective_criteria_primary_literature_reviewed",
+  "validity": "valid",
+  "performance_results_used": false,
+  "source_passport": "docs/01_passport.md",
+  "updated_passport": "docs/research_passport_v2.md",
+  "data_manifest": "data/manifest.json",
+  "config_version": "nomic-137m-f16-970aa74c-llama11146-mean-prefix-f64-v1",
+  "claim_scope": {
+    "application": "Актуальность информационной основы компетенций для кадровой безопасности",
+    "available_source": "O*NET 29.3; one release",
+    "events": "controlled artificial changes; not real release deltas",
+    "semantic_queries": "synthetic templates; no expert gold",
+    "allowed_inference": "fixed measured workload suite; timing uncertainty conditional on this suite",
+    "forbidden_inference": [
+      "universal optimality",
+      "population of enterprises",
+      "real personnel-risk reduction",
+      "semantic completeness",
+      "production deployment",
+      "novelty established"
+    ],
+    "primary_domain": {
+      "id": "D_local_v1",
+      "registry": "stable set of all available queries in each family",
+      "k": 5,
+      "batch_size_documents": 1,
+      "atomic_batches": 100,
+      "reads_after_each_batch": "each active query once",
+      "lifecycle": "initial build plus full history",
+      "event_manifest": "must be frozen before holdout retrieval; not generated in E02",
+      "changes": "insert/delete/fragment or text-vector replacement/applicability/text-version; exact counts and valid trace to freeze before final",
+      "rates": "report actual changed-fragment and applicable-document denominators; no silent percentage rounding"
+    },
+    "secondary_domains": [
+      "k=10,20",
+      "broad filters",
+      "20% and 100% mass changes",
+      "rare repetition and short horizon",
+      "query registration/retirement",
+      "near ties and high influence fraction",
+      "many fragments per document",
+      "large scale only after obtaining suitable data"
+    ],
+    "current_e01_trace_is_final_benchmark": false
+  },
+  "correctness": {
+    "tolerance_output_mismatches": 0,
+    "comparison_fields": [
+      "query_id",
+      "query_version",
+      "config_version",
+      "corpus_version",
+      "ordered doc_id/fragment_id/text_version"
+    ],
+    "score": "math.fsum of binary64 products",
+    "tie_break": "UTF-8 fragment_id within document; UTF-8 doc_id across documents",
+    "epsilon_ranking": false,
+    "proof_required_in_E03": true,
+    "finite_tests_replace_proof": false,
+    "all_methods_same_numeric_contract": true,
+    "optimized_kernel_certification_required": true
+  },
+  "baselines": {
+    "mandatory_exact": [
+      "B0_FULL_EXACT",
+      "B1_DELTA_MATRIX",
+      "B2_RESERVE_EXACT",
+      "B3_ALL_SCORES",
+      "B4_SIMPFER_EXACT",
+      "B5_SIMPFERPP_EXACT",
+      "B6_HYBRID_EXACT"
+    ],
+    "specialized_available": true,
+    "omission_blocks_broad_superiority": true,
+    "full_score_table_required_if_fits_common_budget": true,
+    "resource_reference_b_star": "fastest complete conforming exact baseline by equal-family geometric total cost on validation; deterministic ID tie-break; frozen before final",
+    "pointwise_oracle_selection_on_final": false,
+    "all_mandatory_reported": true,
+    "specialized_availability_meaning": "Full primary texts, pinned author code and adaptation specification available; no implementation validated against A contract",
+    "implementation_validation_completed": false,
+    "selection_policy": "one variant per family frozen on validation before final; keep all exploratory results"
+  },
+  "primary_metric": {
+    "name": "T_total",
+    "unit": "seconds",
+    "direction": "lower",
+    "timing": "direct monotonic wall clock of complete lifecycle, not sum of nested timers",
+    "include": [
+      "input preparation",
+      "required initial and delta embeddings",
+      "query registration",
+      "index and auxiliary-state build",
+      "filter checks",
+      "numeric certification",
+      "incremental updates",
+      "fallback",
+      "answer materialization",
+      "snapshot-ready publication",
+      "scheduled query reads"
+    ],
+    "exclude_but_report": [
+      "external independent research validator",
+      "report generation"
+    ],
+    "ready_vectors_only": "secondary metric, never substituted for full lifecycle",
+    "numerator": "proposed T_total",
+    "denominator": "each mandatory exact baseline T_total",
+    "ratio_name": "R_b",
+    "minimum_fractional_cost_reduction": 0.1,
+    "maximum_acceptable_ratio": 0.9,
+    "equivalent_speedup_minimum": 1.1111111111111112,
+    "criterion": "simultaneous one-sided upper bound for R_b <= 0.90 for EVERY mandatory exact baseline",
+    "threshold_basis": "Prospective engineering target; no enterprise SLA or measured noise asserted. 10% total saving must survive full accounting and uncertainty.",
+    "noise_measured_in_E02": false,
+    "do_not_relax_after_results": true
+  },
+  "aggregation": {
+    "scientific_reporting_unit": "SOC family with its complete workload history",
+    "within_family": "equal weights to predeclared cases; average paired log cost ratios",
+    "across_families": "equal weights to family log ratios; exponentiate",
+    "data_family_counts": {
+      "development": 14,
+      "validation": 4,
+      "final": 5
+    },
+    "timing_repeats_are_independent_datasets": false,
+    "family_sampling_random_and_independent_established": false,
+    "population_confidence_interval_allowed": false,
+    "full_suite_tables_required": true,
+    "forbid_max_speedup_as_overall_effect": true
+  },
+  "uncertainty": {
+    "scope": "measurement uncertainty conditional on fixed suite, NOT sampling uncertainty across independent datasets",
+    "design": "paired complete timing blocks with randomized method order; preserve within-block dependence across methods/cases",
+    "resampling_unit": "complete timing block, not individual requests or documents",
+    "method": "paired block bootstrap of equal-family mean log ratios; exponentiated percentile limits",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": "pvldb-A-e02-criteria-v1",
+    "familywise_alpha": 0.05,
+    "multiplicity": "Bonferroni one-sided alpha/m; m = number of mandatory baseline contrasts frozen before final",
+    "initial_planned_m": 7,
+    "minimum_timing_blocks": 20,
+    "final_timing_block_count": "choose using development pilot precision and freeze BEFORE final; no optional stopping on final",
+    "pilot_precision_requirement": "central two-sided 95% interval relative half-width <=0.05 of estimated ratio for each primary contrast",
+    "precision_not_met": "extend pilot by preregistered E05 rule or return inconclusive; keep effect threshold unchanged",
+    "assumptions_to_check_in_pilot": [
+      "warmup and process reset policy",
+      "thermal drift and background contention",
+      "block dependence/stationarity",
+      "clock and run duration adequate"
+    ],
+    "nominal_intervals_not_unconditional_guarantee": true
+  },
+  "constraints": {
+    "max_peak_rss_process_tree_bytes": 17179869184,
+    "max_peak_rss_ratio_vs_b_star": 1.2,
+    "hardware_observed_ram_bytes": 25769803776,
+    "budget_basis": "research budget reserving 8 GiB from installed 24 GiB; not measured free RAM guarantee",
+    "max_update_latency_p95_ratio_vs_b_star": 1.1,
+    "max_update_latency_p99_ratio_vs_b_star": 1.1,
+    "max_read_latency_p95_ratio_vs_b_star": 1.1,
+    "max_read_latency_p99_ratio_vs_b_star": 1.1,
+    "max_family_geomean_total_cost_ratio_vs_each_baseline": 1.0,
+    "latency_aggregation": "per predeclared case; report pooled and worst-family values, no pooling away bad tails",
+    "small_sample_p99": "report sample count and maximum; mark p99 precision insufficient where necessary; no tail assurance claim",
+    "zero_or_unresolved_baseline_latency": "ratio undefined; fail verification until adequate timer/duration, not divide by epsilon",
+    "resource_thresholds_basis": "prospective engineering tolerances, not production SLA",
+    "resource_constraints_must_hold_for_primary_success": true
+  },
+  "failure_policy": {
+    "mismatch": "invalidate implementation result and return to responsible stage",
+    "timeout_oom": "retain case with reason and limit; no infinite speedup; primary success not established for incomplete suite",
+    "timeout_seconds": "must be frozen from pilot before final; not yet measured in E02",
+    "unamortized_index": "report no break-even inside observed horizon",
+    "tradeoff": "report Pareto/resource tradeoff; do not label full criterion passed",
+    "CI_crosses_0_90": "inconclusive for practical target, not automatic proof of disadvantage"
+  },
+  "personnel_metrics": {
+    "information_freshness": "time from acceptance of complete raw batch to current snapshot readiness, including required embeddings",
+    "incorrect_reuse_rate": "wrong reused outputs / all reused outputs; NA if denominator zero",
+    "Recall_changed_at_k": "NA until independently labeled G and covers(fragment, requirement); NA when G empty; not replaced by self-generated labels",
+    "risk_reduction_claim_allowed": false
+  },
+  "holdout": {
+    "splits": "data/splits.json",
+    "E02_retrieval_outcomes_examined": false,
+    "E02_embeddings_computed": false,
+    "use_for_tuning": false,
+    "if_exposed_and_adapted": "new independent confirmation required; old final becomes exploratory"
+  },
+  "before_final_freeze_required": [
+    "primary review completed in E02; recheck if new closer literature or method scope change",
+    "method and all baseline implementations pass common contract",
+    "exact event trace/case list and seeds",
+    "full lifecycle timing boundary and repeatability",
+    "fixed timing repetitions and timeout from pilot",
+    "resource-reference baseline selection",
+    "hardware/software versions",
+    "numeric compatibility proof and tests",
+    "new input hashes after any rework"
+  ],
+  "current_gate": "pass",
+  "open_rework_id": null,
+  "next_stage_started": false,
+  "review_provenance": {
+    "attempt_id": "E02_2026-11-17_02",
+    "primary_review": "literature/primary_review_E02.md",
+    "source_manifest": "literature/source_manifest.json",
+    "numeric_thresholds_changed": false,
+    "reason_for_panel_change": "Verified Yi adaptive reserve, Simpfer and later Simpfer++; explicit strong composition; no performance outcomes used",
+    "not_claims": [
+      "novelty proved",
+      "algorithm proved",
+      "empirical superiority",
+      "conference acceptance"
+    ]
+  }
+}

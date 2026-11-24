@@ -1,0 +1,97 @@
+{
+  "implementation_version": "A-E04-0.1",
+  "python": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]",
+  "executable": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+  "executable_sha256": "1e78c38b861b64659075942e1d9bdfa083dbb1eb23bd96bd5d166756c1795524",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "architecture": "arm64",
+  "numpy": {
+    "version": "2.0.2",
+    "path": "<home>/Library/Python/3.9/lib/python/site-packages/numpy/__init__.py",
+    "multiarray_path": "<home>/Library/Python/3.9/lib/python/site-packages/numpy/_core/_multiarray_umath.cpython-39-darwin.so",
+    "multiarray_sha256": "8859932b9eba58acce29468e17928aa88091d5448721b23f4adbc5fd9bb6c9c3"
+  },
+  "native": {
+    "path": "environment/native/_native.cpython-39-darwin.so",
+    "sha256": "fdba2be435326d322e5e0dfd6e894c6f2f81a79d0df51ee55e7b269478c52051",
+    "source": "src/pvldb_a/native.c",
+    "source_sha256": "9acd472ebc7d8da6c653a9ce66898ccd5c2ff613e7367f07b34303941b874c54",
+    "build_receipt": "environment/native/build_02.json",
+    "kernel": "ARM64 two-lane binary64 multiplication + actual pinned math.fsum; scalar odd tail; no BLAS reduction or epsilon",
+    "threads": 1
+  },
+  "canonical_binding": {
+    "python": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]",
+    "executable": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+    "executable_sha256": "1e78c38b861b64659075942e1d9bdfa083dbb1eb23bd96bd5d166756c1795524",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "float_info": {
+      "radix": 2,
+      "mant_dig": 53,
+      "rounds": 1,
+      "min_exp": -1021,
+      "max_exp": 1024
+    },
+    "fpcr": 0,
+    "fegetround": 0,
+    "FE_TONEAREST": 0,
+    "probe_sha256": "97b8b2d8a97d6abed1a6e556d64891f52e9352df82ffa5f67ff972c75c133bad",
+    "header_offsets": {
+      "tp_as_number": 96,
+      "nb_multiply": 16
+    },
+    "functions": {
+      "fsum": {
+        "origin": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload/math.cpython-39-darwin.so",
+        "origin_sha256": "fdf75c6e44a518c2fbf3c35d45c3b81973155ab4996fbd2843cee5e242136e26",
+        "copy": "reports/e_stages/E03/E03_2026-11-18_03/fsum_runtime_binary",
+        "arm64_sha256": "5a88f440ec6064e9d646340acd04465057c59da6e9b6f8ebedc696313e6bb5b3",
+        "entry_relative_to_image": "0x2f28",
+        "window_bytes": 1256,
+        "instruction_sha256": "800e36e0c4c39efa027efd14b0faaf4e86864569a7bffc3c7603edaa70428914",
+        "memory_equals_file": true,
+        "disassembly_lines": 314
+      },
+      "float_multiply": {
+        "origin": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Python3",
+        "origin_sha256": "2c18a05ddf0b2ca36caeb9215089cd0016df53a1cb9042fee4a1395a0228ea1d",
+        "copy": "reports/e_stages/E03/E03_2026-11-18_03/float_multiply_runtime_binary",
+        "arm64_sha256": "9b8cc8999186c8e29df801e7221be36f5d84ab5bc788b6fe3ac1cb105b96011d",
+        "entry_relative_to_image": "0x5a104",
+        "window_bytes": 384,
+        "instruction_sha256": "4e4d66e7fe730d76ae5fb492c19512b3ba64053d450c8e73ec702063f5c01ac6",
+        "memory_equals_file": true,
+        "disassembly_lines": 96
+      }
+    },
+    "network_used": false,
+    "limits": "Manual binary-to-algorithm audit plus analytic proof; not formal machine-code verification.",
+    "fpcr_after": 0
+  },
+  "embedding": {
+    "config": "data/processed/onet29_3_v1/embedding_config.json",
+    "threads": 4,
+    "gpu_layers": 0,
+    "offline": true,
+    "binary_receipt": "data/processed/onet29_3_v1/embeddings_development/invocation.json"
+  },
+  "cpu": "Apple M4 Pro",
+  "ram_bytes": 25769803776,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "runtime_numeric_policy": {
+    "FPCR": 0,
+    "guard": "per protected worker region and native matrix call",
+    "callbacks": "arbitrary signal handlers/tracing/profiling rejected; automatic GC disabled within region",
+    "no_gil_release_in_matrix": true,
+    "input_arrays": "private contiguous binary64 arrays, read-only during call"
+  },
+  "network_used": false,
+  "installed_packages": false,
+  "E05_started": false
+}

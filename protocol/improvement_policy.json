@@ -1,0 +1,116 @@
+{
+  "version": "A-E07-policy-1.1",
+  "attempt_id": "E07_2026-11-18_01",
+  "frozen_before_new_code_and_timing": true,
+  "date": "2026-11-18T13:04:34.321870+03:00",
+  "input_diagnosis_sha256": "84d2d5dcf7a5fb2bd5a02ce69138f423350afe914258b2bef3865df6b272fe74",
+  "success_criteria_sha256": "4d80f464df7a77c8b892e7f92cc0719f2c2284c5e712c4935a6ca54954a6cd6b",
+  "data_policy": {
+    "headroom_families": "all 14 development SOC families",
+    "comparison_families": [
+      "27",
+      "25"
+    ],
+    "selection": "lower-median registry size family (27:45) and smallest registry exceeding default leaf_limit64 (25:68), selected by counts before timing",
+    "registry": "all queries of each family",
+    "k": 5,
+    "atomic_batches": 100,
+    "changed_document_ids_per_batch": 1,
+    "event_cycle": "insert held document; disable target; reenable; text-version; replace text/vector; restore; delete first fragment; restore; delete held document; atomic fragment remove/reinsert with new version",
+    "texts": "Only existing real development source text; synthetic event histories, no new real releases claimed",
+    "validation_accessed": false,
+    "final_holdout_accessed": false
+  },
+  "headroom": {
+    "method": "B3_ALL_SCORES",
+    "implementation": "A-E04-0.1 unchanged",
+    "warmup_blocks": 1,
+    "measured_blocks": 3,
+    "purpose": "conditional full-path cost headroom; not superiority and not independent family-population inference",
+    "floor": "(T_total-initialization-maintenance)/T_total; same observed other costs",
+    "stop_large_search_if": "All three complete equal-family block floors exceed .90 and no complete block gives 10% engine-only headroom; only requested validated cleanup comparison continues. This is a conditional budget decision, not final-domain impossibility."
+  },
+  "iterations": [
+    {
+      "id": "I01",
+      "parent": "A-E04-0.1",
+      "hypothesis": "E06 H03: avoid max_norm2 for C1-family consumers; compute reusable exact query norms once for B4/B5 norm sorting and summaries. No score/certificate formula changes.",
+      "expected": "lower build/partition cost, identical blocks/output/bounds and update score counts; no new algorithmic novelty",
+      "implementation": "new namespace src/pvldb_a_e07_i01; preserve original package",
+      "execute": true
+    },
+    {
+      "id": "I02",
+      "parent": "I01",
+      "hypothesis": "Use finite binary64 widths only for KD split-axis selection; all produced boxes still enclose exact stored query coordinates. Exact Fraction widths are unnecessary for partition correctness.",
+      "expected": "cheaper multi-leaf build; output invariants unchanged though partition may differ; retain exact BOX predicate",
+      "execute": "Only if headroom budget decision permits more work and I01 did not supply eligible candidate"
+    },
+    {
+      "id": "I03",
+      "parent": "I02",
+      "hypothesis": "leaf_limit=8 may reduce geometric false rejections; pay extra boxes, routing and failed bounds; cost benefit must survive full path.",
+      "expected": "more successful certificates possible but cost regression possible; test rather than assume",
+      "execute": "Only if I02 is valid, headroom permits, no successful candidate and budget remains"
+    }
+  ],
+  "comparison": {
+    "primary_mode": "cold; physical initial/delta embeddings, within-run cache shared symmetrically",
+    "warmup_blocks": 1,
+    "measured_blocks": 20,
+    "random_seed": 18071801,
+    "sequential_processes": true,
+    "common_timeout_seconds": 45,
+    "common_max_rss_bytes": 17179869184,
+    "strong_panel": [
+      "C1_ORIGINAL",
+      "C1_I01",
+      "C1_NO_CERT_I01",
+      "B1_DELTA_MATRIX_I01",
+      "B2_RESERVE_EXACT_I01",
+      "B2_ADAPTIVE_I01",
+      "B3_ALL_SCORES_I01",
+      "B6_HYBRID_EXACT_I01"
+    ],
+    "additional_panel": [
+      "B0_FULL_EXACT_I01",
+      "B4_SIMPFER_EXACT_I01",
+      "B5_SIMPFERPP_EXACT_I01"
+    ],
+    "additional_panel_measured_blocks": 3,
+    "additional_panel_scope": "bounded feasibility diagnostic; never sufficient for final E02 gate. Full mandatory 20-block validation required only for promising selected candidate.",
+    "future_iterations": "Same 20 block plan and strong B2/B3 controls; each iteration own frozen commands/code/run IDs. No stopping at favorable p-value.",
+    "ready_regressions": [
+      "P05_ready_dominated_11",
+      "P06_ready_selective_15",
+      "P07_ready_scale_128"
+    ],
+    "ready_methods": [
+      "C1_ORIGINAL",
+      "C1_I01",
+      "B2_RESERVE_EXACT_I01",
+      "B3_ALL_SCORES_I01"
+    ],
+    "ready_blocks": 5
+  },
+  "validation_policy": "Run complete E04 differential/property acceptance suite in fresh output path for each new code version, plus structural norm/partition audit on both selected full registries. No speed run before pass. Do not overwrite earlier reports. New code validity does not automatically update historical E04.",
+  "acceptance": {
+    "cleanup": "Accept engineering change only if correct, equal non-time counters/required block metadata and lower partition cost; preserve version even if no scientific success.",
+    "candidate": "Original E02 <=.90 simultaneous one-sided upper vs EVERY mandatory baseline on held-out validation; each family no regression; memory/tail constraints and novelty/ablations verified; all thresholds unchanged. Screening insufficient for pass.",
+    "promote_to_validation": "20-block selected development aggregate upper<=.90 vs BOTH B2 and B3, no family geomean regression, correctness passes. Then freeze candidate and complete all mandatory panel and validation before any pass decision.",
+    "failure": "No candidate after budget/conditional headroom stop -> completed with gate rework or stop; no E08. Record targeted R02 and affected-version scopes."
+  },
+  "research_budget": {
+    "maximum_code_or_parameter_iterations": 3,
+    "headroom_runs": 56,
+    "primary_I01_runs": 360,
+    "ready_regression_runs": 72,
+    "maximum_additional_I02_I03_runs_per_iteration": 126,
+    "no_unbounded_tuning": true
+  },
+  "uncertainty": "Paired complete timing blocks; 10000 bootstrap; Bonferroni .05/7 for mandatory contrasts. Headroom three-block and ready five-block results descriptive; no final superiority claim from them.",
+  "memory_and_reads": "New common runner records actual one-query reads with pin/materialize cost and process-tree samples; conservative operational self+child peak and sampled whole-life RSS remain distinct; no invented exact ratio certificate.",
+  "E08_started": false,
+  "network_used": false,
+  "revision": "Only planned run-count arithmetic corrected 354->360; schedule/rules unchanged, before any timing."
+}

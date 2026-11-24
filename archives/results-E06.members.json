@@ -1,0 +1,377 @@
+[
+{
+"path": "results/comparison/E06_2026-11-18_01/analysis.json",
+"bytes": 489830,
+"sha256": "33b22eb14f7021377644ddac47a9b964a6f868369cbd579d3580e3822a3d4f4e"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/cost_components.png",
+"bytes": 77267,
+"sha256": "663384f4dc76bf39ac3d1ff1f82a662774093dfd6a1f7982692e173f48916b63"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/fairness_audit.json",
+"bytes": 3101,
+"sha256": "135cbe67fb09760c39f3e248ccf103961131a7b2c7a427a94d7891400d67af05"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/geometry_audit.json",
+"bytes": 1422723,
+"sha256": "bc7c939c28f73bd0f956c94f9a9116a817e756c18bbd99e947b1a7badaf19c88"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profile_index.json",
+"bytes": 17082,
+"sha256": "2e033abc0c6ccd918a187a866652b75bf16ed3563349e18b7b82262bb9a05827"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P03_ready_local_11_C1/profile.json",
+"bytes": 60995,
+"sha256": "84571e0effddd7bbdc223c4c80b8d27e20d90b47bb0dc3ee8471ff0866bf6415"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P03_ready_local_11_C1/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P03_ready_local_11_C1/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_B4_SIMPFER_EXACT/profile.json",
+"bytes": 194151,
+"sha256": "9c6856dcd4a3c6bc2302608d5482a87dd7b920110fa5c1c915125bf6a07e4aa6"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_B4_SIMPFER_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_B4_SIMPFER_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_B5_SIMPFERPP_EXACT/profile.json",
+"bytes": 92845,
+"sha256": "b33338c8ad53148e1ed33dbfb1ad0a5692e77f55025bc4e3548ee6b88e604944"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_B5_SIMPFERPP_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_B5_SIMPFERPP_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_C1/profile.json",
+"bytes": 92381,
+"sha256": "dfed13daba5a0683eecda644590b5c97ba0ea7c6c0dbe92795c344cfc422eee5"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_C1/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P04_ready_mass_15_C1/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B1_DELTA_MATRIX/profile.json",
+"bytes": 63367,
+"sha256": "c4c60491329612e72e006176f01d3927cd8a3138fbdf8d3093d65f493338da84"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B1_DELTA_MATRIX/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B1_DELTA_MATRIX/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B2_RESERVE_EXACT/profile.json",
+"bytes": 63368,
+"sha256": "dbecc244205a2e83d6118d988a5d591cbacf90ba7e019921b1f62577c7628065"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B2_RESERVE_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B2_RESERVE_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B3_ALL_SCORES/profile.json",
+"bytes": 58063,
+"sha256": "090597b8568c7b1f5744956f410e3ccfb092b31d5711b8994128fdaf99933516"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B3_ALL_SCORES/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_B3_ALL_SCORES/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1/profile.json",
+"bytes": 75980,
+"sha256": "a864a8d00bfaac205647c8d9377b159bb9816cd81359246194a97ed3a57b72d1"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_FLAT/profile.json",
+"bytes": 76605,
+"sha256": "22217f4801f72040803bdcbce3e2e031164ca9c537cd9c18a78480b60015a598"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_FLAT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_FLAT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_MARGIN/profile.json",
+"bytes": 78459,
+"sha256": "9a16aa0bc73d9de5f14157f4378de69ab0e956c4329b2fe5876df19141642967"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_MARGIN/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_MARGIN/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_NO_CERT/profile.json",
+"bytes": 63450,
+"sha256": "bf5237de02f3f9364e9135ea4b756688c79918606b8de17b326745b172f9b0ca"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_NO_CERT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_NO_CERT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_SEPARATE/profile.json",
+"bytes": 75989,
+"sha256": "c0f85be4f46fb050d418ca401a6e2d9733977edab3ec1a02f25ad01c1fb6fc3d"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_SEPARATE/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P05_ready_dominated_11_C1_SEPARATE/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B2_ADAPTIVE/profile.json",
+"bytes": 176617,
+"sha256": "2a3c9c6a7d12a0015b0f76aebc2de9884986832c5bbcfb4d1b5bc0fd242c3730"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B2_ADAPTIVE/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B2_ADAPTIVE/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B2_RESERVE_EXACT/profile.json",
+"bytes": 176619,
+"sha256": "b88d297c56c4eca46ade59c1f71cbe97dcd58fc9dd3801a22980b1b9dc6151a5"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B2_RESERVE_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B2_RESERVE_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B3_ALL_SCORES/profile.json",
+"bytes": 109800,
+"sha256": "dc02ceef692e63aca86a2f52f634245a4ba7755a59eb54436bcb6b68267f22f7"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B3_ALL_SCORES/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_B3_ALL_SCORES/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_C1/profile.json",
+"bytes": 188678,
+"sha256": "b092df005889020cfadc004ba4d4eb5214fcbfe071856bd7ff50da65371ec95a"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_C1/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P06_ready_selective_15_C1/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B1_DELTA_MATRIX/profile.json",
+"bytes": 682095,
+"sha256": "40efe666b634a36d857c376326f2acd254f4e4e5318565c3a88a2cb5872093e8"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B1_DELTA_MATRIX/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B1_DELTA_MATRIX/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B2_RESERVE_EXACT/profile.json",
+"bytes": 448410,
+"sha256": "8b31c78135146639d0a30f577d185d0aeb09a4051bd0d6d1371bd783d9f8168b"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B2_RESERVE_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B2_RESERVE_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B3_ALL_SCORES/profile.json",
+"bytes": 447759,
+"sha256": "65fd5690e158d831927f974ba2b3d07b68b5b4b9a35feaed00fcde23779f345d"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B3_ALL_SCORES/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B3_ALL_SCORES/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B5_SIMPFERPP_EXACT/profile.json",
+"bytes": 563172,
+"sha256": "dd63426a4d971f55736c1e8287a328e8fa255f1d45a923f411ad3e4e561df0e3"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B5_SIMPFERPP_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B5_SIMPFERPP_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B6_HYBRID_EXACT/profile.json",
+"bytes": 448110,
+"sha256": "a9007764c74234b5d82378fe7df9ce129debb53389d61adb1093782e137e0c38"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B6_HYBRID_EXACT/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_B6_HYBRID_EXACT/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_C1/profile.json",
+"bytes": 516874,
+"sha256": "cb65b515e740e4560d5b7941bdf3c51bbed4c6abda8db72fdcade6404d633e10"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_C1/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P07_ready_scale_128_C1/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P08_memory_headroom_256_C1/profile.json",
+"bytes": 481421,
+"sha256": "44c8cb2fb58ca7c849a7f0fd99e94ccafd7c98ec6f9b675ad4fdfdb9c5719d94"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P08_memory_headroom_256_C1/stderr.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/profiles/E06_diag_v1_P08_memory_headroom_256_C1/stdout.txt",
+"bytes": 0,
+"sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+},
+{
+"path": "results/comparison/E06_2026-11-18_01/run_analysis.json",
+"bytes": 30311337,
+"sha256": "ee7b5d544ba213c97377dcbe9e9a51f341a5759dca98d8355aabbed43c6cb096"
+}
+]

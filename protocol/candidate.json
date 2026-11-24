@@ -1,0 +1,44 @@
+{
+  "article_id": "A",
+  "attempt_id": "E07_2026-11-18_01",
+  "decision": "no_candidate",
+  "selected_version": null,
+  "parameters": null,
+  "evaluated_version": "A-E07-I01-1.0",
+  "parent": "A-E04-0.1 / A-E03-C1-0.3-bounded-fsum",
+  "evaluated_parameters": {
+    "leaf_limit": 64,
+    "primary_k": 5,
+    "primary_atomic_batches": 100,
+    "changed_documents_per_batch": 1,
+    "other_parameters": "Unchanged per workload, fully recorded in worker.json"
+  },
+  "engineering_cleanup_accepted": true,
+  "engineering_acceptance_scope": "Separate versioned implementation; no promotion to scientific candidate or overwrite of A-E04-0.1",
+  "proofs": [
+    "docs/numeric_certificate_C1.md",
+    "results/iterations/E07_2026-11-18_01/I01/proof_and_scope.md"
+  ],
+  "implementation_manifest": "results/iterations/E07_2026-11-18_01/I01/implementation_manifest.json",
+  "validation": "reports/e_stages/E07/E07_2026-11-18_01/I01_validation.json",
+  "tuning_results": [
+    "results/iterations/E07_2026-11-18_01/I01_analysis.json",
+    "results/iterations/E07_2026-11-18_01/regressions_analysis.json"
+  ],
+  "headroom": {
+    "aggregate_conditional_floor": 0.9328714852804278,
+    "maximum_conditional_saving_percent": 6.712851471957215,
+    "three_blocks_stop": true
+  },
+  "validation_accessed": false,
+  "final_holdout_accessed": false,
+  "heldout_success_criterion_passed": false,
+  "novelty_verified": false,
+  "memory_and_tail_criterion_passed": false,
+  "E08_allowed": false,
+  "E08_started": false,
+  "rework_id": "RW_A_E07_2026-11-18_01",
+  "reason": "Conditional engine-only headroom below 10% in every complete 14-family block; I01 did not meet preregistered B2+B3 screening. Cleanup not an independent scientific contribution.",
+  "limitations": "Fixed development histories and shared workstation; conditional cost model is not universal impossibility. Validation/final remain unexamined.",
+  "created_at": "2026-11-18T14:39:45.286973+03:00"
+}

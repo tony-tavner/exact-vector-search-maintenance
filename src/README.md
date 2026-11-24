@@ -1,0 +1,6 @@
+# Implementations
+
+* `pvldb_a/` — implementation A-E04-0.1 used for the original C1 and all controls: B0 full search, B1 delta rescoring, B2 exact reserve (fixed and adaptive capacity), B3 all-scores cache, B4/B5 exact Simpfer/Simpfer++ adaptations, B6 hybrid rebuild, and the C1 variants `C1_FLAT`, `C1_SEPARATE`, `C1_MARGIN`, `C1_NO_CERT` (`engine.py`). Shared components: answer model and snapshot publication (`model.py`, `persistent.py`), canonical scorer and tiled kernel (`scoring.py`, `native.c`), safe numerical bounds (`numeric.py`), query blocks (`blocks.py`), reserves (`reserve.py`), exhaustive oracle (`oracle.py`), embedding acquisition (`embedding.py`), timers and counters (`metrics.py`).
+* `pvldb_a_e07_i01/` — version C1-I01 (Section 3.4): identical to `pvldb_a` except that query-block construction no longer computes the query norms that C1 never reads (`blocks.py`, `engine.py`; all other modules are byte-identical). `scripts/check_e07_i01_structure.py` compares the query blocks built by the two versions.
+
+Implementation checks: `python3 tests/e04/check_implementation.py --output <new JSON file>` and `python3 tests/e07_i01/check_implementation.py --output <new JSON file>`. The native kernel is built with `scripts/build_e04_native.py`; the build used for the measurements is recorded in `environment/native/`.

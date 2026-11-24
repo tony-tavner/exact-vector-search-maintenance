@@ -1,0 +1,2450 @@
+{
+  "schema_version": 1,
+  "method_version": "A-E03-2.0-composition-audit",
+  "scope": "Hand-authored full-snapshot answers and reasoning traces; no incremental implementation or performance data.",
+  "cases": [
+    {
+      "id": "reserve_frontier_two_batches",
+      "reserve_capacity": 2,
+      "manual_trace": "R=[A,B], b=B(.5); insert X(.75) -> R=[A,X]; delete A -> R=[X]. Top-k-only routing misses X and incorrectly returns B after deletion.",
+      "counterexample_bad_rule": "Use kth output score instead of last reserve score",
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "reserve_frontier_two_batches-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "reserve_frontier_two_batches-c1"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "X",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "reserve_frontier_two_batches-c2"
+        }
+      ]
+    },
+    {
+      "id": "stale_frontier_requires_fallback",
+      "reserve_capacity": 1,
+      "manual_trace": "R=[A]; delete A and insert X -> no key<=old b; C empty, full search returns X.",
+      "counterexample_bad_rule": "Retain old threshold as completeness certificate after losing its witnesses",
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.875,
+                    0.4841229182759271
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.625,
+                    0.7806247497997998
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "stale_frontier_requires_fallback-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.625,
+                    0.7806247497997998
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "X",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "stale_frontier_requires_fallback-c1"
+        }
+      ]
+    },
+    {
+      "id": "lexical_reserve_boundary",
+      "reserve_capacity": 2,
+      "manual_trace": "R=[A,B]; delete B, insert Z tied on score but Z>B: C=[A]. Delete A -> fallback returns C. Scalar-only admission would keep Z and return it wrongly.",
+      "counterexample_bad_rule": "Use scalar score>=tau without full lexical boundary for reserve admission",
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.875,
+                    0.4841229182759271
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "lexical_reserve_boundary-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.875,
+                    0.4841229182759271
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "Z",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "lexical_reserve_boundary-c1"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "Z",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "C",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "lexical_reserve_boundary-c2"
+        }
+      ]
+    },
+    {
+      "id": "delete_winning_fragment",
+      "reserve_capacity": 2,
+      "manual_trace": "Remove whole A record; recompute A max=.5 from remaining fragment; B now wins.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "winner",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                },
+                {
+                  "fragment_id": "other",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "winner",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "delete_winning_fragment-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "other",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "B",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "delete_winning_fragment-c1"
+        }
+      ]
+    },
+    {
+      "id": "metadata_opens_applicability",
+      "reserve_capacity": 2,
+      "manual_trace": "X has no new vector but enabled change puts X in D; compute current max and admit X.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": false,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "metadata_opens_applicability-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "X",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "metadata_opens_applicability-c1"
+        }
+      ]
+    },
+    {
+      "id": "text_version_only",
+      "reserve_capacity": 1,
+      "manual_trace": "Same scores do not license stale text_version; A is touched and its complete record replaced.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "text_version_only-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v2",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v2"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "text_version_only-c1"
+        }
+      ]
+    },
+    {
+      "id": "fragment_tie_changes_representative",
+      "reserve_capacity": 1,
+      "manual_trace": "New tied fragment a precedes z in UTF8 order; document score unchanged, winner changes.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "z",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "z",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "fragment_tie_changes_representative-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "z",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                },
+                {
+                  "fragment_id": "a",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "a",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "fragment_tie_changes_representative-c1"
+        }
+      ]
+    },
+    {
+      "id": "mixed_atomic_batch",
+      "reserve_capacity": 2,
+      "manual_trace": "A changes .75->.25 while X(1) is inserted; old b=B(.5), final candidates B,X; publish X.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "mixed_atomic_batch-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v2",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "X",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "mixed_atomic_batch-c1"
+        }
+      ]
+    },
+    {
+      "id": "empty_and_short_reserve",
+      "reserve_capacity": 3,
+      "manual_trace": "k=3, eligible count 1: Small includes q; deletion leaves empty, full search confirms empty.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 3,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "empty_and_short_reserve-c0"
+        },
+        {
+          "documents": [],
+          "expected_hits": [],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 3,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "empty_and_short_reserve-c1"
+        }
+      ]
+    },
+    {
+      "id": "query_filter_change",
+      "reserve_capacity": 1,
+      "manual_trace": "Same vector, new filter/query_version: full initialize; old reserve cannot certify new scope.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "valve",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "query_filter_change-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "valve",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "B",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv2",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "valve"
+            }
+          },
+          "corpus_version": "query_filter_change-c1"
+        }
+      ]
+    },
+    {
+      "id": "binary64_near_tie",
+      "reserve_capacity": 2,
+      "manual_trace": "B is one binary64 step above A; X is one step above B. No epsilon treats them as a tie.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5000000000000001,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "B",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "binary64_near_tie-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5000000000000001,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5000000000000002,
+                    0.8660254037844385
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "X",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "binary64_near_tie-c1"
+        }
+      ]
+    },
+    {
+      "id": "negative_scores",
+      "reserve_capacity": 2,
+      "manual_trace": "All scores negative: initial threshold -.5, new X=-.125 qualifies; threshold 0 would miss it.",
+      "counterexample_bad_rule": "Initialize routing threshold to zero",
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    -0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    -0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "negative_scores-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    -0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    -0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "X",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    -0.125,
+                    0.9921567416492215
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "X",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "negative_scores-c1"
+        }
+      ]
+    },
+    {
+      "id": "identical_vectors_different_filters",
+      "reserve_capacity": 1,
+      "manual_trace": "Two simultaneous query fixtures share all vector bits but retain distinct filters/hits; these snapshots are query instances on the same corpus, not a query update trace.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "valve",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "qa",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "identical_vectors_different_filters-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "valve",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "B",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "qb",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "valve"
+            }
+          },
+          "corpus_version": "identical_vectors_different_filters-c0"
+        }
+      ]
+    },
+    {
+      "id": "ordered_batch_final_version",
+      "reserve_capacity": 1,
+      "manual_trace": "Ordered valid replacements v1->v2->v3; final score equals initial but publish only v3. Intermediate states are not exposed. Event validation is a separate implementation obligation.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "ordered_batch_final_version-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v3",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v3"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "ordered_batch_final_version-c1"
+        }
+      ]
+    },
+    {
+      "id": "configuration_rebuild",
+      "reserve_capacity": 1,
+      "manual_trace": "Config change requires full initialization; final vectors here are explicitly supplied toy inputs, not an embedding generation experiment.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "configuration_rebuild-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    1,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "B",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv2",
+            "config_version": "toy-e03-canonical-v2",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "configuration_rebuild-c1"
+        }
+      ]
+    },
+    {
+      "id": "delete_reserve_winning_fragment",
+      "reserve_capacity": 2,
+      "manual_trace": "R=[A,B]. Losing B.win drops B below frontier: R=[A]. Then deletion A requires full search and returns C; an unrefreshed reserve would incorrectly return B.",
+      "counterexample_bad_rule": null,
+      "snapshots": [
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.875,
+                    0.4841229182759271
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "win",
+                  "text_version": "v1",
+                  "vector": [
+                    0.75,
+                    0.6614378277661477
+                  ]
+                },
+                {
+                  "fragment_id": "rest",
+                  "text_version": "v1",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "delete_reserve_winning_fragment-c0"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "A",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.875,
+                    0.4841229182759271
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "rest",
+                  "text_version": "v1",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "A",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "delete_reserve_winning_fragment-c1"
+        },
+        {
+          "documents": [
+            {
+              "doc_id": "B",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "rest",
+                  "text_version": "v1",
+                  "vector": [
+                    0.25,
+                    0.9682458365518543
+                  ]
+                }
+              ]
+            },
+            {
+              "doc_id": "C",
+              "metadata": {
+                "enabled": true,
+                "equipment": "pump",
+                "valid_from": "2026-01-01",
+                "valid_to": "2027-01-01"
+              },
+              "fragments": [
+                {
+                  "fragment_id": "f",
+                  "text_version": "v1",
+                  "vector": [
+                    0.5,
+                    0.8660254037844386
+                  ]
+                }
+              ]
+            }
+          ],
+          "expected_hits": [
+            [
+              "C",
+              "f",
+              "v1"
+            ]
+          ],
+          "query": {
+            "query_id": "q",
+            "query_version": "qv1",
+            "config_version": "toy-e03-canonical-v1",
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "query_time": "2026-11-18",
+            "k": 1,
+            "filter": {
+              "equipment": "pump"
+            }
+          },
+          "corpus_version": "delete_reserve_winning_fragment-c2"
+        }
+      ]
+    }
+  ],
+  "manual_validation_obligations": [
+    {
+      "id": "version_alias",
+      "input": "Same (doc_id,fragment_id,text_version), different source text",
+      "expected": "Reject entire batch; old root remains",
+      "verification": "manual specification only"
+    },
+    {
+      "id": "partial_failure",
+      "input": "OOM or malformed vector after some staging updates",
+      "expected": "Discard staging; do not publish new corpus_version",
+      "verification": "manual specification only"
+    },
+    {
+      "id": "external_applicability_change",
+      "input": "External access/role map changes with incomplete D",
+      "expected": "Complete D or rebuild; incremental acceptance forbidden",
+      "verification": "manual specification only"
+    }
+  ]
+}

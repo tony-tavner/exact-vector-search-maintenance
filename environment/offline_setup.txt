@@ -1,0 +1,41 @@
+Статья A / A-E04-0.1 / локальная среда macOS ARM64
+
+Рабочий каталог: корень pvldb-personnel-vector-search.
+Интерпретатор: /Library/Developer/CommandLineTools/usr/bin/python3 (3.9.6).
+NumPy 2.0.2 уже установлен локально; новых пакетов не устанавливалось.
+Полные версии, SHA256 и пути: environment/manifest.json.
+Сеть, pip install, загрузка моделей и облачные коннекторы не нужны и не включаются.
+
+Готовый модуль: environment/native/_native.cpython-39-darwin.so.
+Исходник: src/pvldb_a/native.c; точная команда успешной сборки в environment/native/build_02.json.
+Использован локальный clang и matching Python.h из CLT Framework 3.9. sysconfig первоначально
+указывал отсутствующий каталог; build_01.json сохраняет эту неудачу.
+Нативный scorer использует ARM64 SIMD binary64 multiplication и настоящий math.fsum.
+BLAS reduction/float32/FMA не используются; потоки scorer=1 для всех методов.
+Подготовка embeddings: тот же локальный llama-embedding, CPU, threads=4, --offline.
+
+Проверка корректности с НОВЫМ именем результата:
+  python3 tests/e04/check_implementation.py --output reports/e_stages/E04/НОВЫЙ_RUN.json
+Запуск одного инструментарного примера (не сравнительный пилот):
+  python3 scripts/run_pilot.py --stage E04_SMOKE --method C1 --workload tests/e04/infrastructure_workload.json --out reports/e_stages/E04/НОВЫЙ_SMOKE
+--out обязан отсутствовать. Старые JSON/logs не перезаписываются.
+Канонический runtime и FPCR проверяются при работе; несовместимая/изменённая среда не
+получает разрешения использовать BOX. Custom signal/profile/trace callbacks отвергаются.
+Внешние инструменты, меняющие FPCR/машинный код/приватные массивы в обход API, не входят
+в поддерживаемый контракт процесса. Проверенная область не переносится на другую ISA автоматически.
+
+Восстановление сборки из исходника в новом локальном каталоге:
+  python3 scripts/build_e04_native.py --output-dir reports/e_stages/E04/НОВЫЙ_BUILD/native
+Повторная сборка не должна заменять принятую версию без нового attempt_id, привязки среды и проверок.
+Успешный отдельный build ещё не переключает используемый environment/native.
+Если локальные заголовки/NumPy/model отсутствуют, зафиксировать недостающий вход; не скачивать их.
+
+Общий API: PYTHONPATH=src; from pvldb_a.engine import Engine, METHODS.
+Engine.build(documents, queries, corpus_version); Engine.apply(ordered_events, new_version,
+expected_corpus_version, queries=None, documents=None, cap=None); Engine.answers().
+Полная спецификация JSON/ошибок/вариантов: docs/implementations.md.
+Независимый full-snapshot oracle: src/pvldb_a/oracle.py; старый E01 oracle также сохранён.
+
+E05_PILOT — отдельный явно выбираемый режим scripts/run_pilot.py для будущего поручения E05.
+В текущей задаче он не запускался. Финальная выборка этим runner намеренно не принимается:
+для E08 требуется отдельный замороженный протокол, а не снятие ограничения E04/E05.

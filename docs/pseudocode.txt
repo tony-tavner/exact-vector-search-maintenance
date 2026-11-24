@@ -1,0 +1,102 @@
+ARTICLE A / E03_2026-11-18_03 / A-E03-C1-0.3-bounded-fsum
+Input: A-E02-C1-0.1. SPECIFICATION ONLY, not executable E04 implementation.
+GATE pass: guarded BOX bound proved by F_OP; implementation remains E04 work.
+
+CANONICAL(q,f):
+    return math.fsum(binary64(q_i)*binary64(f_i) in fixed coordinate order)
+KEY(record) = (-score, UTF8(doc_id))
+WINNER_KEY(fragment) = (-CANONICAL(q,fragment), UTF8(fragment_id))
+
+BUILD_BLOCKS(Q, leaf_limit=64):
+    require finite validated query vectors and unique active query IDs
+    recursively choose coordinate with largest exact width, break ties by index
+    sort by coordinate value then UTF8(query_id), split at median
+    stop at leaf_limit; assign deterministic leaf IDs and new epoch
+    leaf box = actual coordinate minima/maxima; retain every member/version
+
+INITIALIZE(q,C,cap):
+    require finite integer cap >= q.k > 0
+    compute all eligible nonempty document maxima and complete records
+    return first min(cap,eligible_count) records sorted by KEY
+
+BOUND_SCAN(qblock,z,w):
+    values=[]
+    for q in qblock:
+        sz=CANONICAL(q,z); sw=CANONICAL(q,w)
+        if exception/nonfinite: return UNKNOWN
+        values.append(exact_dyadic(sz) - exact_dyadic(sw))
+    return max(values)  # exact rational, no rounded subtraction
+
+NUMERIC_CONTEXT:
+    pin canonical scorer/config and inspected runtime hashes/instructions (paid once per context)
+    require RN binary64 separate operations and gradual underflow
+    enforce FPCR=0 in same worker during protected region, with no mode-changing callbacks/FFI
+    check FPCR before/after; snapshots alone do not establish stability inside
+    context mismatch/unsupported environment disables BOX; scorer config changes rebuild
+
+BOUND_BOX(box,z,w,numeric_context):
+    p = len(box)
+    if context not attested/stable or p outside [1,2^20]: return UNKNOWN
+    if lengths mismatch, any nonfinite, |coordinate|>2 or lo>hi: return UNKNOWN
+    require immutable exact extrema of block members/epoch (paid during BUILD_BLOCKS)
+    u=exact(2^-53); eta=exact(2^-1074); L=p*(p-1)/2
+    F_p(A):
+        H=(A+3*L*eta)/(1-4*L*u); G=(H+p*eta/2)/(1-p*u)
+        return L*(2*u*H+2*eta)+(p+8)*u*G+3*p*u*H+(4*p+8)*eta
+    E_p(A)=u*A+p*eta/2+F_p((1+u)*A+p*eta/2)
+    # Precompute beta=E_p(0), alpha=E_p(1)-beta once per dimension/context.
+    Az=sum_i max(abs(lo_i),abs(hi_i))*abs(z_i)  # exact rationals
+    Aw=sum_i max(abs(lo_i),abs(hi_i))*abs(w_i)
+    S=sum_i max(lo_i*(z_i-w_i),hi_i*(z_i-w_i))
+    return S+alpha*Az+alpha*Aw+2*beta  # exact sign; no float conversion
+    # No q traversal or canonical scorer invocation. Allocation failure => UNKNOWN.
+
+COVER(doc_old,doc_new,block,backend):
+    if either doc missing or metadata not byte-identical: return UNKNOWN
+    require unchanged config and block/query epoch
+    S = full identical fragment records in both snapshots, keyed by fragment ID
+    Removed = old fragments not in S; Added = new fragments not in S
+    if S empty: return UNKNOWN
+    if Removed union Added empty: return CERTIFIED
+    w = minimum UTF8(fragment_id) in S  # h=1; not an oracle winner
+    for z in Removed union Added in deterministic side/ID/version order:
+        U = BOUND_BOX(block.box,z,w,numeric_context) if backend == BOX_CANONICAL else BOUND_SCAN(block,z,w)
+        if U is UNKNOWN or U >= 0: return UNKNOWN
+    return certificate(old_version,new_version,doc,block_epoch,z/w identities)
+    # SCAN control only: w scores cached once per q/cell; charged. BOX: Aw may be reused per cell.
+
+ATOMIC_BATCH(old_root,events,registry_or_cap_changes,config_changes):
+    staging_C,D = validate_and_apply_all_ordered_events_privately()
+    if registry_or_cap_changes or config_changes:
+        build all required new embeddings before comparisons
+        INITIALIZE all new active Q; build blocks and complete postings
+        publish only complete validated root; return
+    freeze old Q, blocks, R, full last-reserve boundary b, Rev, Small
+    Cert = empty bounded persistent/set map (default budget 2^20 cells)
+    for d in D in UTF8 order:
+        build S/Removed/Added once from final snapshots; validate identities
+        for block in old blocks in ID order:
+            if Cert budget reached: leave cell absent (UNKNOWN); continue
+            result=COVER(old[d],staging_C[d],block,BOX_CANONICAL)
+            if result is CERTIFIED: Cert.add((d,block))
+    Dq(q,d) = d in D and (d,block(q)) not in Cert
+    Touched = old Small; New[q] = empty doc-ID map
+    for d in D:
+        for block in old blocks:
+            if (d,block) in Cert: continue
+            Touched.update(old_Rev.get((d,block),empty))
+            for q in block:
+                if d absent, empty or not eligible in staging_C: continue
+                rec=full current CANONICAL_DOCUMENT(q,d)
+                if KEY(rec) <= old_b[q]: New[q][d]=rec; Touched.add(q)
+    Rnew = private copy of old R references  # O(M), not free
+    for q in Touched:
+        candidates = [r in old_R[q] where not Dq(q,r.doc_id)] union New[q]
+        if len(candidates) >= k_q: Rnew[q]=sort(candidates,KEY)[:cap_q]
+        else: Rnew[q]=INITIALIZE(q,staging_C,cap_q)
+    update persistent Rev[(doc,block)] memberships only for changed R
+    update Small and next-batch b; construct full current-version answers
+    publish one immutable root; errors before commit discard staging
+
+No adaptive reserve or cost-based switch enabled in this version.
+No new E04 implementation, timing benchmark, or production process was executed.

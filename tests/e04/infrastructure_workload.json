@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "scope": "E04 infrastructure smoke, synthetic personnel competency example",
+  "split": "synthetic",
+  "mode": "ready_vectors",
+  "corpus_version": "smoke0",
+  "documents": [
+    {
+      "doc_id": "D",
+      "metadata": {
+        "enabled": true,
+        "valid_from": "2026-01-01",
+        "valid_to": "2027-01-01"
+      },
+      "fragments": [
+        {
+          "fragment_id": "w",
+          "text_version": "v1",
+          "vector": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "fragment_id": "r",
+          "text_version": "v1",
+          "vector": [
+            0.8,
+            0.6
+          ]
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q",
+      "query_version": "qv1",
+      "config_version": "C1-toy-canonical-v1",
+      "vector": [
+        0.9950124688279302,
+        0.09975062344139651
+      ],
+      "query_time": "2026-11-18",
+      "filter": {},
+      "k": 1
+    }
+  ],
+  "batches": [
+    {
+      "corpus_version": "smoke1",
+      "events": [
+        {
+          "op": "put_document",
+          "document": {
+            "doc_id": "D",
+            "metadata": {
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "w",
+                "text_version": "v1",
+                "vector": [
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "fragment_id": "r",
+                "text_version": "v2",
+                "vector": [
+                  0.8,
+                  -0.6
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "leaf_limit": 2
+  }
+}

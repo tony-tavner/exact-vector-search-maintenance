@@ -1,0 +1,29 @@
+{
+  "version": "A-E04-0.1",
+  "mandatory_methods": [
+    "B0_FULL_EXACT",
+    "B1_DELTA_MATRIX",
+    "B2_RESERVE_EXACT",
+    "B3_ALL_SCORES",
+    "B4_SIMPFER_EXACT",
+    "B5_SIMPFERPP_EXACT",
+    "B6_HYBRID_EXACT"
+  ],
+  "additional_variants": [
+    "B2_ADAPTIVE",
+    "C1_FLAT",
+    "C1_SEPARATE",
+    "C1_MARGIN",
+    "C1_NO_CERT"
+  ],
+  "proposed": "C1",
+  "leaf_limit": 64,
+  "certificate_budget": 1048576,
+  "reserve_default": "2*k; B1/B0/B3 use k; adaptive starts ceil(N^0.6)",
+  "hybrid_fraction": 0.3,
+  "kernel_threads": 1,
+  "embedding_threads": 4,
+  "final_variants_selected": false,
+  "thresholds_tuned_on_performance": false,
+  "E05_started": false
+}

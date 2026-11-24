@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "scope": "E04 cold infrastructure smoke, not method-performance pilot",
+  "split": "development",
+  "mode": "cold",
+  "corpus_version": "cold0",
+  "documents": [
+    {
+      "doc_id": "onet29.3:11-1011.00",
+      "corpus_version": "onet29.3-controlled-v1",
+      "occupation_code": "11-1011.00",
+      "occupation_family": "11",
+      "split": "development",
+      "metadata": {
+        "role": "soc_major_11",
+        "equipment": "generic",
+        "language": "en",
+        "access_scope": "public",
+        "enabled": true,
+        "valid_from": "2026-01-01",
+        "valid_to": "2027-01-01",
+        "provenance": "ALL applicability fields are controlled synthetic workload metadata, not O*NET legal applicability."
+      },
+      "fragments": [
+        {
+          "fragment_id": "onet29.3:11-1011.00:description",
+          "text_version": "onet29.3-8cf8853707e8e45f",
+          "text": "Chief Executives. Determine and formulate policies and provide overall direction of companies or private and public sector organizations within guidelines set up by a board of directors or similar governing body. Plan, direct, or coordinate operational activities at the highest level of management with the help of subordinate executives and staff managers.",
+          "kind": "description",
+          "source_file": "onet_occupations.tsv",
+          "source_key": "11-1011.00",
+          "source_kind": "real_public_occupation_data",
+          "transformation": "title plus source description"
+        },
+        {
+          "fragment_id": "onet29.3:11-1011.00:skills",
+          "text_version": "onet29.3-fb78629b6a99e9d6",
+          "text": "Chief Executives. O*NET skill categories (not individual qualifications): Reading Comprehension; Active Listening; Writing; Speaking; Mathematics; Science; Critical Thinking; Active Learning; Learning Strategies; Monitoring; Social Perceptiveness; Coordination; Persuasion; Negotiation; Instructing; Service Orientation; Complex Problem Solving; Operations Analysis; Technology Design; Equipment Selection; Installation; Programming; Operations Monitoring; Operation and Control; Equipment Maintenance; Troubleshooting; Repairing; Quality Control Analysis; Judgment and Decision Making; Systems Analysis; Systems Evaluation; Time Management; Management of Financial Resources; Management of Material Resources; Management of Personnel Resources.",
+          "kind": "skills",
+          "source_file": "onet_skills.tsv",
+          "source_key": "11-1011.00",
+          "source_kind": "real_public_occupation_data",
+          "transformation": "title plus all sorted unique listed skill names; no rating-based selection"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "query:11-1011.00",
+      "query_version": "v1",
+      "query_text": "What skills and responsibilities are relevant to the occupation Chief Executives?",
+      "query_time": "2026-11-17",
+      "k": 5,
+      "filter": {
+        "role": "soc_major_11",
+        "equipment": "generic",
+        "language": "en",
+        "access_scope": "public"
+      },
+      "split": "development",
+      "occupation_family": "11",
+      "config_version": "nomic-137m-f16-970aa74c-llama11146-mean-prefix-f64-v1",
+      "source_kind": "synthetic_template_query",
+      "semantic_gold": false,
+      "purpose": "computational maintenance workload, not expert relevance evaluation"
+    }
+  ],
+  "batches": [
+    {
+      "corpus_version": "cold1",
+      "events": [
+        {
+          "op": "put_fragment",
+          "doc_id": "onet29.3:11-1011.00",
+          "fragment": {
+            "fragment_id": "onet29.3:11-1011.00:description",
+            "text_version": "E04-cold-preparation-only",
+            "text": "Chief Executives. Determine and formulate policies and provide overall direction of companies or private and public sector organizations within guidelines set up by a board of directors or similar governing body. Plan, direct, or coordinate operational activities at the highest level of management with the help of subordinate executives and staff managers. Controlled infrastructure verification example.",
+            "kind": "description",
+            "source_file": "onet_occupations.tsv",
+            "source_key": "11-1011.00",
+            "source_kind": "real_public_occupation_data",
+            "transformation": "title plus source description"
+          }
+        }
+      ]
+    }
+  ]
+}

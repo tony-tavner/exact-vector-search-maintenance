@@ -1,0 +1,2972 @@
+{
+  "schema_version": 1,
+  "config_version": "toy-2d-v1",
+  "purpose": "E01 contract checks only; not an embedding model, empirical corpus, or proposed-method test",
+  "gold_construction": "Expected ordered triples explicitly written independently of verifier.",
+  "cases": [
+    {
+      "id": "new_leader_old_sources_unchanged",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D5",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-11-10",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f51",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f51",
+                "vector": [
+                  0.94,
+                  0.3411744421846397
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "Adapted from completed passport §6; insert D5 only. This is not a new scientific result.",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D5",
+          "f51",
+          "v1"
+        ],
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "delete_winning_fragment",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "delete_winning_fragment",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ],
+        [
+          "D1",
+          "f12",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "applicability_change",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "applicability_change",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D4",
+          "f41",
+          "v1"
+        ],
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "utf8_doc_and_fragment_ties",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "я",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "z",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент z",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "Z",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f02",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f02",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              },
+              {
+                "fragment_id": "f01",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f01",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "A",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "a",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент a",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "я",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "z",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент z",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "Z",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f02",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f02",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              },
+              {
+                "fragment_id": "f01",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f01",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "A",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "a",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент a",
+                "vector": [
+                  0.9,
+                  0.4358898943540673
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "utf8_doc_and_fragment_ties",
+      "expected_before": [
+        [
+          "A",
+          "a",
+          "v1"
+        ],
+        [
+          "Z",
+          "f01",
+          "v1"
+        ],
+        [
+          "я",
+          "z",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "A",
+          "a",
+          "v1"
+        ],
+        [
+          "Z",
+          "f01",
+          "v1"
+        ],
+        [
+          "я",
+          "z",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "empty_eligible_result",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "E",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": []
+          },
+          {
+            "doc_id": "F",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": false,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "E",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": []
+          },
+          {
+            "doc_id": "F",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": false,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "empty_eligible_result",
+      "expected_before": [],
+      "expected_after": []
+    },
+    {
+      "id": "one_hit_per_document",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "A",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "a1",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент a1",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              },
+              {
+                "fragment_id": "a2",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент a2",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "B",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "b1",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент b1",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "A",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "a1",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент a1",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              },
+              {
+                "fragment_id": "a2",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент a2",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "B",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "b1",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент b1",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "one_hit_per_document",
+      "expected_before": [
+        [
+          "A",
+          "a1",
+          "v1"
+        ],
+        [
+          "B",
+          "b1",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "A",
+          "a1",
+          "v1"
+        ],
+        [
+          "B",
+          "b1",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "text_version_is_part_of_answer",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v2",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "text_version_is_part_of_answer",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D1",
+          "f11",
+          "v2"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "half_open_time_interval",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "ends_today",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2026-11-17"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f1",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f1",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "starts_today",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-11-17",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f2",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f2",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "ends_today",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2026-11-17"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f1",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f1",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "starts_today",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-11-17",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f2",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f2",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "half_open_time_interval",
+      "expected_before": [
+        [
+          "starts_today",
+          "f2",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "starts_today",
+          "f2",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "missing_required_metadata_excluded",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "missing_required_metadata_excluded",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "k_exceeds_eligible_count",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 20,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "k_exceeds_eligible_count",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "mixed_atomic_batch",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": false,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D5",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f51",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f51",
+                "vector": [
+                  0.94,
+                  0.3411744421846397
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "Delete D2, disable D1, insert D5; evaluate final C1 atomically.",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D5",
+          "f51",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "id": "replacement_changes_rank_and_version",
+      "provenance": "synthetic hand-specified; no source requirement or model prediction",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "before": {
+        "corpus_version": "C0",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.86,
+                  0.510294032886923
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "corpus_version": "C1",
+        "documents": [
+          {
+            "doc_id": "D1",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f11",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f11",
+                "vector": [
+                  0.91,
+                  0.41460824883255754
+                ]
+              },
+              {
+                "fragment_id": "f12",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f12",
+                "vector": [
+                  0.8,
+                  0.5999999999999999
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D2",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f21",
+                "text_version": "v2",
+                "text": "Искусственный контрольный фрагмент f21",
+                "vector": [
+                  0.99,
+                  0.14106735979665894
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D3",
+            "metadata": {
+              "role": "technician",
+              "equipment": "pump",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f31",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f31",
+                "vector": [
+                  0.82,
+                  0.5723635208501675
+                ]
+              }
+            ]
+          },
+          {
+            "doc_id": "D4",
+            "metadata": {
+              "role": "technician",
+              "equipment": "turbine",
+              "language": "ru",
+              "access_scope": "public",
+              "enabled": true,
+              "valid_from": "2026-01-01",
+              "valid_to": "2027-01-01"
+            },
+            "fragments": [
+              {
+                "fragment_id": "f41",
+                "text_version": "v1",
+                "text": "Искусственный контрольный фрагмент f41",
+                "vector": [
+                  0.98,
+                  0.1989974874213242
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "event_description": "replacement_changes_rank_and_version",
+      "expected_before": [
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D2",
+          "f21",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D2",
+          "f21",
+          "v2"
+        ],
+        [
+          "D1",
+          "f11",
+          "v1"
+        ],
+        [
+          "D3",
+          "f31",
+          "v1"
+        ]
+      ]
+    }
+  ],
+  "invalid_cases": [
+    {
+      "id": "zero",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "documents": [
+        {
+          "doc_id": "bad",
+          "metadata": {
+            "role": "technician",
+            "equipment": "pump",
+            "language": "ru",
+            "access_scope": "public",
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "bad",
+              "text_version": "v1",
+              "text": "Искусственный контрольный фрагмент bad",
+              "vector": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_error": "invalid_vector"
+    },
+    {
+      "id": "non_unit",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "documents": [
+        {
+          "doc_id": "bad",
+          "metadata": {
+            "role": "technician",
+            "equipment": "pump",
+            "language": "ru",
+            "access_scope": "public",
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "bad",
+              "text_version": "v1",
+              "text": "Искусственный контрольный фрагмент bad",
+              "vector": [
+                2.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_error": "invalid_vector"
+    },
+    {
+      "id": "wrong_dimension",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "documents": [
+        {
+          "doc_id": "bad",
+          "metadata": {
+            "role": "technician",
+            "equipment": "pump",
+            "language": "ru",
+            "access_scope": "public",
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "bad",
+              "text_version": "v1",
+              "text": "Искусственный контрольный фрагмент bad",
+              "vector": [
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_error": "invalid_vector"
+    },
+    {
+      "id": "non_finite",
+      "query": {
+        "query_id": "Q1",
+        "query_version": "v1",
+        "config_version": "toy-2d-v1",
+        "query_time": "2026-11-17",
+        "k": 3,
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "filter": {
+          "role": "technician",
+          "equipment": "pump",
+          "language": "ru",
+          "access_scope": "public"
+        }
+      },
+      "documents": [
+        {
+          "doc_id": "bad",
+          "metadata": {
+            "role": "technician",
+            "equipment": "pump",
+            "language": "ru",
+            "access_scope": "public",
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "bad",
+              "text_version": "v1",
+              "text": "Искусственный контрольный фрагмент bad",
+              "vector": [
+                "NaN",
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_error": "invalid_vector"
+    }
+  ]
+}

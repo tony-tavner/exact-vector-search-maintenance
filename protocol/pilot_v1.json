@@ -1,0 +1,330 @@
+{
+  "version": "A-E05-pilot-1.0",
+  "attempt_id": "E05_2026-11-18_01",
+  "stage_id": "E05",
+  "frozen_before_timing": true,
+  "implementation_version": "A-E04-0.1",
+  "E06_started": false,
+  "split": "development_only",
+  "holdout_retrieval_used": false,
+  "validation_split_used": false,
+  "primary_domain_is_confirmatory": false,
+  "cases": [
+    {
+      "id": "P01_cold_local_11",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P01_cold_local_11.json",
+      "sha256": "85f602f729695c79ae76fa25635100a62027db6406928a599cf6aaad861751ba",
+      "role": "primary_cold",
+      "mode": "cold",
+      "documents": 12,
+      "fragments": 20,
+      "queries": 4,
+      "k": [
+        5
+      ],
+      "batches": 8,
+      "families": [
+        "11"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 120,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P02_cold_mass_15",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P02_cold_mass_15.json",
+      "sha256": "39df94bec7cd70b919ee38b58650d5003c20d1042ce2bab0aab21692ec725827",
+      "role": "primary_cold",
+      "mode": "cold",
+      "documents": 20,
+      "fragments": 37,
+      "queries": 8,
+      "k": [
+        10
+      ],
+      "batches": 3,
+      "families": [
+        "15"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 120,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P03_ready_local_11",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P03_ready_local_11.json",
+      "sha256": "6fde5bd0d36171ae6cc9adf9d69e42516489b7ba15c796ffd754130d105ea5d5",
+      "role": "secondary_ready",
+      "mode": "ready_vectors",
+      "documents": 12,
+      "fragments": 20,
+      "queries": 4,
+      "k": [
+        5
+      ],
+      "batches": 8,
+      "families": [
+        "11"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 120,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P04_ready_mass_15",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P04_ready_mass_15.json",
+      "sha256": "1d876e799743b10c4eaa00864794b59014fa1a75b90a13ed7c7827de2b5652a8",
+      "role": "secondary_ready",
+      "mode": "ready_vectors",
+      "documents": 20,
+      "fragments": 37,
+      "queries": 8,
+      "k": [
+        10
+      ],
+      "batches": 3,
+      "families": [
+        "15"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 120,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P05_ready_dominated_11",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P05_ready_dominated_11.json",
+      "sha256": "4082478e23dec5ddeae4cd65bea6c6f11932bf055d4385e52f8d61733f746f11",
+      "role": "mechanism_ready",
+      "mode": "ready_vectors",
+      "documents": 16,
+      "fragments": 28,
+      "queries": 1,
+      "k": [
+        5
+      ],
+      "batches": 20,
+      "families": [
+        "11"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE",
+        "C1_FLAT",
+        "C1_SEPARATE",
+        "C1_MARGIN",
+        "C1_NO_CERT"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 120,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P06_ready_selective_15",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P06_ready_selective_15.json",
+      "sha256": "41c28600151a26894f47b15378f0c16861475575596a10fa545829fcc3e91444",
+      "role": "secondary_ready",
+      "mode": "ready_vectors",
+      "documents": 32,
+      "fragments": 57,
+      "queries": 16,
+      "k": [
+        20
+      ],
+      "batches": 3,
+      "families": [
+        "15"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 120,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P07_ready_scale_128",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P07_ready_scale_128.json",
+      "sha256": "137b6410303808822e279c9e2803f5aa81f3da50fdbf568ad676ffc97904cb00",
+      "role": "scale_ready",
+      "mode": "ready_vectors",
+      "documents": 128,
+      "fragments": 239,
+      "queries": 32,
+      "k": [
+        20
+      ],
+      "batches": 3,
+      "families": [
+        "11",
+        "15",
+        "17"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 20,
+      "timeout_seconds": 30,
+      "max_rss_bytes": 17179869184
+    },
+    {
+      "id": "P08_memory_headroom_256",
+      "path": "results/pilot/E05_2026-11-18_01/workloads/P08_memory_headroom_256.json",
+      "sha256": "19caeebb212722fa938b9609a83327a44d105cf4da2b8466e306be9b5689d123",
+      "role": "diagnostic_memory_limit",
+      "mode": "ready_vectors",
+      "documents": 256,
+      "fragments": 478,
+      "queries": 64,
+      "k": [
+        20
+      ],
+      "batches": 1,
+      "families": [
+        "11",
+        "15",
+        "17",
+        "23",
+        "25",
+        "27"
+      ],
+      "methods": [
+        "C1",
+        "B0_FULL_EXACT",
+        "B1_DELTA_MATRIX",
+        "B2_RESERVE_EXACT",
+        "B3_ALL_SCORES",
+        "B4_SIMPFER_EXACT",
+        "B5_SIMPFERPP_EXACT",
+        "B6_HYBRID_EXACT",
+        "B2_ADAPTIVE"
+      ],
+      "timing_blocks": 3,
+      "timeout_seconds": 30,
+      "max_rss_bytes": 134217728
+    }
+  ],
+  "mandatory_methods": [
+    "B0_FULL_EXACT",
+    "B1_DELTA_MATRIX",
+    "B2_RESERVE_EXACT",
+    "B3_ALL_SCORES",
+    "B4_SIMPFER_EXACT",
+    "B5_SIMPFERPP_EXACT",
+    "B6_HYBRID_EXACT"
+  ],
+  "method_parameters": "Accepted E04 defaults; leaf_limit=64, fixed reserve=2k, B2 adaptive and B6 fraction=.3 untuned.",
+  "warmup": "One complete excluded block of every case/method, with fresh worker and physical cold embeddings; retained as warmup.",
+  "cold_definition": "No cross-run embedding-result reuse. OS file/model page cache is NOT flushed; warm-system cold-vector preparation, not machine-boot cold.",
+  "repeat_rule": {
+    "initial_complete_blocks": 20,
+    "extension_complete_blocks": 20,
+    "maximum_complete_blocks": 40,
+    "trigger": "At 20 only: any primary cold C1/mandatory ratio central 95% bootstrap relative halfwidth > .05 -> add 20 complete blocks of ALL non-resource cases; no effect/p-value stopping.",
+    "if_still_imprecise": "Keep full results; precision inconclusive. Do not relax effect target or claim superiority.",
+    "resource_case_blocks": 3,
+    "resource_reason": "128 MiB diagnostic headroom limit, not the 16 GiB article constraint; no speed ratio from killed runs."
+  },
+  "order": {
+    "seed": 18051801,
+    "design": "Random case order and independent randomized method order inside each paired complete block; sequential child workers only."
+  },
+  "uncertainty": {
+    "bootstrap_replicates": 10000,
+    "seed": 18051802,
+    "unit": "complete paired timing block",
+    "scope": "Conditional measurement uncertainty for this small diagnostic suite only; no population/final claims.",
+    "cold_aggregate": "Equal weight to the two predeclared cold histories, each from a different development SOC family; different settings, not final full-family estimand.",
+    "report_casewise": true,
+    "simultaneous_one_sided_alpha": 0.05,
+    "mandatory_contrasts": 7,
+    "pilot_precision_relative_halfwidth": 0.05,
+    "effect_target_unchanged_ratio": 0.9
+  },
+  "correctness": "All full answers from every completed run, independent raw-snapshot oracle; cold vectors reconstructed from saved physical raw inference outputs; exact versions/order, no epsilon.",
+  "failure_policy": "Retain stdout/stderr/supervisor/outcome. Output mismatch or numeric input non-repeatability stops suite with rework; timeout/memory limits are censored outcomes, never infinite speedups.",
+  "cost_policy": "Unchanged run_pilot.py direct worker T_total, embeddings/build/update/reads/serialization included; independent validator excluded. Nested spans descriptive only.",
+  "memory_policy": "Sampled tree RSS lower bound; self+single sequential child high-water upper bound. Final memory criterion not certified from sampled RSS.",
+  "noise_policy": "Fresh process, identical thread limits, interleaved blocks, excluded warmup; log load average/thermal state/top process names before every run. No overlapping article benchmark launched.",
+  "limits": [
+    "Own exact-contract baseline adaptations, not original author binaries",
+    "No semantic gold, Recall_changed_at_k=NA",
+    "No actual 1e5/1e6 fragment run; extrapolate cautiously from measured counts/costs",
+    "No final baseline/parameter selection in E05"
+  ],
+  "input_sha256": {
+    "docs/success_criteria.json": "4d80f464df7a77c8b892e7f92cc0719f2c2284c5e712c4935a6ca54954a6cd6b",
+    "data/splits.json": "18ae3c79eb83bee8c85b60bdd4297f70fa3573ea1a1a80ae68fd885af7c1addc",
+    "environment/manifest.json": "538f183074eb48d69d1194d0aaadddfc7ddd24214258576b981c4b5ee97dcc4f",
+    "validation/implementation_report.json": "6d8ec25099854c8ed3fbd309436b4afb420870263bf93105d29890e1694b0f40",
+    "scripts/run_pilot.py": "ad94149febb2773ab3cb7647e9f51006f2bda4c34d77f200550557bc16ced6d9",
+    "scripts/prepare_e05_pilot.py": "e02bfa381f3794ff002b06b09d472f49b5d1b67df9c8f07cc73c93b380f76296",
+    "scripts/e05_common.py": "64cedb1c6afa54c5787a22ce2fbe3e34916413e1149ba8cb97a6b36a5432b8fc"
+  }
+}

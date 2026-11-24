@@ -1,0 +1,24 @@
+{
+  "command": [
+    "xcrun",
+    "clang",
+    "-bundle",
+    "-undefined",
+    "dynamic_lookup",
+    "-O3",
+    "-std=c11",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-I/Library/Python/3.9/include",
+    "<workdir>/src/pvldb_a/native.c",
+    "-o",
+    "<workdir>/environment/native/_native.cpython-39-darwin.so"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "<workdir>/src/pvldb_a/native.c:2:10: fatal error: 'Python.h' file not found\n    2 | #include <Python.h>\n      |          ^~~~~~~~~~\n1 error generated.\n",
+  "python": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]",
+  "compiler": "Apple clang version 17.0.0 (clang-1700.4.4.1)\nTarget: arm64-apple-darwin25.2.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "source_sha256": "9acd472ebc7d8da6c653a9ce66898ccd5c2ff613e7367f07b34303941b874c54",
+  "network_used": false
+}

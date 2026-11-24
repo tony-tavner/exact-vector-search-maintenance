@@ -1,0 +1,16 @@
+O*NET 29.3 Database (May 2025)
+U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).
+Licensed under Creative Commons Attribution 4.0 (CC BY 4.0):
+https://www.onetcenter.org/license_db.html
+https://creativecommons.org/licenses/by/4.0/
+
+Source files (content unchanged, renamed):
+https://www.onetcenter.org/dl_files/database/db_29_3_text/Occupation%20Data.txt -> onet_occupations.tsv
+  SHA-256 63e6029d3d30ff5c7cf39b5304a733b77a409e01c65ae7095fe92f6d18d74a66
+https://www.onetcenter.org/dl_files/database/db_29_3_text/Skills.txt -> onet_skills.tsv
+  SHA-256 52e042e9cfc3352a2da28a39a164cfd8244267e9fd3d0ee027c2d4228919e23d
+
+Derived documents combine source titles and descriptions or lists of skill names.
+Queries, applicability fields and update histories were constructed for this study;
+they are not official requirements or regulatory admission rules and are not
+endorsed by USDOL/ETA.

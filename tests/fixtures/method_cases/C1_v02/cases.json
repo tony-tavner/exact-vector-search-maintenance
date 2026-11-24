@@ -1,0 +1,1340 @@
+{
+  "version": "A-E03-C1-0.2-audit",
+  "cases": [
+    {
+      "id": "two_sided_nonwinning_replace",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "geometric premise holds in rational model; canonical certificate still pending",
+      "reason": "Both changed versions are strictly below unchanged witness throughout box.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "only_new_side_is_unsafe",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "x",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            },
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                0.0,
+                -1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "x",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "New z is dominated, but deleted x was old winner; old side must be covered.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "only_old_side_is_unsafe",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            },
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            },
+            {
+              "fragment_id": "x",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "x",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "Removed z is dominated, but new x beats unchanged w; new side must be covered.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "winner_version_changed",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v2",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v2"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "Vector equality is not full record identity; winning text_version changes.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "tie_changes_fragment_id",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "a",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "z",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "a",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "Strict U<0 fails at tie; new lexicographically smaller fragment wins.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "metadata_change",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": false,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "Document applicability changed; geometry cannot certify unchanged derived row.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "query_outside_certified_block",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv2",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.0,
+          1.0
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "r",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "A different query version lies outside box; stale membership certificate is invalid.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "witness_removed_in_same_batch",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "r",
+          "v2"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "Old w does not belong to common set S; checking new fragment against deleted w is unsafe.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "nonwinning_fragment_deletion",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "old-side geometric premise holds; new side empty",
+      "reason": "Only a dominated fragment is removed; same unchanged witness remains.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "no_common_fragment",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-toy-canonical-v1",
+        "vector": [
+          0.9950124688279302,
+          0.09975062344139651
+        ],
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          },
+          "fragments": [
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "r",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "r",
+          "v2"
+        ]
+      ],
+      "candidate_decision_by_manual_reasoning": "reject",
+      "reason": "S empty: cannot use this certificate even if doc_id remains top-1.",
+      "origin": "R02/E02 hand case; original preserved"
+    },
+    {
+      "id": "canonical_tie_defeats_real_bound",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-v02-toy",
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1,
+        "vector": [
+          0.6,
+          0.8
+        ]
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                0.6,
+                0.8
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                0.6,
+                0.8
+              ]
+            },
+            {
+              "fragment_id": "a",
+              "text_version": "v1",
+              "vector": [
+                0.6000000000000001,
+                0.7999999999999999
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "z",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "a",
+          "v1"
+        ]
+      ],
+      "reason": "Real dot difference negative, canonical scores tie at 1.0; new UTF8 ID wins.",
+      "origin": "E03 C1 v0.2 hand case"
+    },
+    {
+      "id": "subnormal_tie_defeats_real_bound",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-v02-toy",
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1,
+        "vector": [
+          1.0,
+          5e-324
+        ]
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                5e-324
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "z",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                5e-324
+              ]
+            },
+            {
+              "fragment_id": "a",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "z",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "a",
+          "v1"
+        ]
+      ],
+      "reason": "Product eta^2 underflows; mathematical strict order becomes canonical tie.",
+      "origin": "E03 C1 v0.2 hand case"
+    },
+    {
+      "id": "cell_only_q1",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-v02-toy",
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1,
+        "vector": [
+          1.0,
+          0.0
+        ]
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "reason": "Block q1 may certify D; certificate cannot remove D globally.",
+      "origin": "E03 C1 v0.2 hand case"
+    },
+    {
+      "id": "cell_only_q2",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-v02-toy",
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1,
+        "vector": [
+          0.0,
+          1.0
+        ]
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "r",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "reason": "Same document event affects q2; global deletion from D would retain wrong old winner.",
+      "origin": "E03 C1 v0.2 hand case"
+    },
+    {
+      "id": "certified_doc_other_new_leader",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-v02-toy",
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1,
+        "vector": [
+          1.0,
+          0.0
+        ]
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v1",
+              "vector": [
+                0.8,
+                0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "fragment_id": "r",
+              "text_version": "v2",
+              "vector": [
+                0.8,
+                -0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        },
+        {
+          "doc_id": "A",
+          "fragments": [
+            {
+              "fragment_id": "f",
+              "text_version": "v1",
+              "vector": [
+                1.0,
+                0.0
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "A",
+          "f",
+          "v1"
+        ]
+      ],
+      "reason": "D is unchanged for q, but another new document wins by doc ID; cannot reuse whole query answer.",
+      "origin": "E03 C1 v0.2 hand case"
+    },
+    {
+      "id": "negative_strict_domination",
+      "query": {
+        "query_id": "q",
+        "query_version": "qv1",
+        "config_version": "C1-v02-toy",
+        "query_time": "2026-11-18",
+        "filter": {},
+        "k": 1,
+        "vector": [
+          1.0,
+          0.0
+        ]
+      },
+      "before": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                -0.6,
+                0.8
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "after": [
+        {
+          "doc_id": "D",
+          "fragments": [
+            {
+              "fragment_id": "w",
+              "text_version": "v1",
+              "vector": [
+                -0.6,
+                0.8
+              ]
+            },
+            {
+              "fragment_id": "a",
+              "text_version": "v1",
+              "vector": [
+                -0.8,
+                0.6
+              ]
+            }
+          ],
+          "metadata": {
+            "enabled": true,
+            "valid_from": "2026-01-01",
+            "valid_to": "2027-01-01"
+          }
+        }
+      ],
+      "expected_before": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "expected_after": [
+        [
+          "D",
+          "w",
+          "v1"
+        ]
+      ],
+      "reason": "All scores negative; strict canonical difference is still a valid relation.",
+      "origin": "E03 C1 v0.2 hand case"
+    }
+  ],
+  "scope": "Hand full-snapshot answers; not execution of C1 certificates, transactions or index."
+}
